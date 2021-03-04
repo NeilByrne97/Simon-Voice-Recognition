@@ -12,7 +12,7 @@ public class ClickButton : MonoBehaviour
     private Vector3 myTP;
 
     public int myNumber = 99; 
-
+    public RobotLogic myLogic;
     public delegate void ClickEV(int number);
 
     public event ClickEV onClick;
@@ -31,9 +31,12 @@ public class ClickButton : MonoBehaviour
 
     private void OnMouseDown()
     {
-        ClickedColor();
-        transform.position = new Vector3 (myTP.x, -0.2f, myTP.z);
-        onClick.Invoke(myNumber);
+        if(myLogic.player)
+        {
+            ClickedColor();
+            transform.position = new Vector3 (myTP.x, -0.2f, myTP.z);
+            onClick.Invoke(myNumber);
+        }
     }
 
     private void OnMouseUp()
