@@ -9,11 +9,19 @@ public class ClickButton : MonoBehaviour
     public Material normalMat;
 
     private Renderer myR;
+    private Vector3 myTP;
+
+    public int myNumber = 99; 
+
+    public delegate void ClickEV(int number);
+
+    public event ClickEV onClick;
 
     private void Awake()
     {
         myR = GetComponent<Renderer>();
         myR.enabled = true;
+        myTP = transform.position;
     }
 
     void Update()
@@ -24,11 +32,14 @@ public class ClickButton : MonoBehaviour
     private void OnMouseDown()
     {
         ClickedColor();
+        transform.position = new Vector3 (myTP.x, -0.2f, myTP.z);
+        onClick.Invoke(myNumber);
     }
 
     private void OnMouseUp()
     {
         UnClickedColor();
+        transform.position = new Vector3 (myTP.x, myTP.y, myTP.z);
     }
 
     public void ClickedColor()

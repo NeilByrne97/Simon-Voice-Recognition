@@ -229,6 +229,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lightMat: {fileID: 2100000, guid: f72ac3e57874b3742940439c40200aae, type: 2}
   normalMat: {fileID: 2100000, guid: d7630b25ea949f84abcaeb78ec3dfb4b, type: 2}
+  myNumber: 99
 --- !u!1 &78213818
 GameObject:
   m_ObjectHideFlags: 0
@@ -337,6 +338,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lightMat: {fileID: 2100000, guid: 838053cf00944a043a4139d32dcd1812, type: 2}
   normalMat: {fileID: 2100000, guid: dfc45df8608301e4fadbe9510cf028a8, type: 2}
+  myNumber: 99
 --- !u!1 &266744654
 GameObject:
   m_ObjectHideFlags: 0
@@ -445,6 +447,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lightMat: {fileID: 2100000, guid: 402a26af89bbffa4d9007d79cf830e7c, type: 2}
   normalMat: {fileID: 2100000, guid: ff674c06f0fe76d4db580d774435b585, type: 2}
+  myNumber: 99
 --- !u!1 &378386864
 GameObject:
   m_ObjectHideFlags: 0
@@ -695,6 +698,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lightMat: {fileID: 2100000, guid: 0cf9162411f0e2a43b733c123eea01d9, type: 2}
   normalMat: {fileID: 2100000, guid: f567a39dd56dc7e44bb7f242aefc845a, type: 2}
+  myNumber: 99
 --- !u!1 &626841275
 GameObject:
   m_ObjectHideFlags: 0
@@ -1029,7 +1033,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1407440542}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1469830389}
+        m_MethodName: StartGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1407440542
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1079,6 +1094,7 @@ GameObject:
   - component: {fileID: 1469830387}
   - component: {fileID: 1469830386}
   - component: {fileID: 1469830385}
+  - component: {fileID: 1469830389}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
@@ -1161,6 +1177,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1469830389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1469830384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fdeec7eb6328474687ba911e3fb60d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myButtons:
+  - {fileID: 69180513}
+  - {fileID: 455258031}
+  - {fileID: 266744659}
+  - {fileID: 78213823}
+  showtime: 0.5
+  pausetime: 0.5
 --- !u!1 &1814710919
 GameObject:
   m_ObjectHideFlags: 0
