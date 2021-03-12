@@ -1193,7 +1193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fdeec7eb6328474687ba911e3fb60d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myButtons:
+  colorButtons:
   - {fileID: 69180513}
   - {fileID: 455258031}
   - {fileID: 266744659}

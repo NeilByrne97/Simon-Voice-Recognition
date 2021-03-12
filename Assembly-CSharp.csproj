@@ -37,7 +37,12 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\ClickButton.cs" />
+     <Compile Include="Assets\Grammar Recogniser\GrammarController.cs" />
+     <Compile Include="Assets\Keyword Recogniser\Scenes\CrossHair.cs" />
      <Compile Include="Assets\RobotLogic.cs" />
+     <None Include="Assets\StreamingAssets\SimpleGrammar.xml" />
+     <None Include="Assets\StreamingAssets\SRGSColors.xml" />
+     <None Include="Assets\StreamingAssets\TicTacToeGrammar.xml" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.11f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

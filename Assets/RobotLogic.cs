@@ -5,18 +5,21 @@ using UnityEngine.UI;
 
 public class RobotLogic : MonoBehaviour
 {
-    public ClickButton[] myButtons;
+    public ClickButton[] colorButtons;
     public List<int> colorList;
-    public float showtime = 0.5f;
-    public float pausetime = 0.5f;
+    public float showtime = 0.5f;   // Highlight Color
+    public float pausetime = 0.5f;  // Normal Color
     
+    // Game objects
     public int level = 2;
     private int playerLevel = 0;
     private bool robot = false;
     public bool player = false;
 
-    private int myRandom;
+    // Color changes each turn
+    private int randomColor;
 
+    // Menu
     public Button StartButton;
     public Text gameOverText;
     public Text scoreText;
@@ -24,10 +27,10 @@ public class RobotLogic : MonoBehaviour
 
     void Start()
     {
-        for (int i = 0; i < myButtons.Length; i++)
+        for (int i = 0; i < colorButtons.Length; i++)   // Difficulty TO BE DONE
         {
-            myButtons[i].onClick += ButtonClicked;
-            myButtons[i].myNumber = i;
+            colorButtons[i].onClick += ButtonClicked;    
+            colorButtons[i].myNumber = i;
         }    
     }
 
@@ -35,19 +38,18 @@ public class RobotLogic : MonoBehaviour
     {
         if(player)
         {
-            if(_number == colorList[playerLevel])
+            if(_number == colorList[playerLevel])   // playerLevel is the position in the sequence
             {
-                playerLevel += 1;
-                score += 1;
-                scoreText.text = score.ToString();
-
+                playerLevel += 1;   // Next color in position set up for next button press
+                score += 1;         // Increment after every correct click
+                scoreText.text = score.ToString();  // Update string
             }
             else
             {
                 GameOver();
             }
             if(playerLevel == level)
-            {   // Next round
+            {   // Next round reset
                 level += 1;
                 playerLevel = 0;
                 player = false;
@@ -73,16 +75,16 @@ public class RobotLogic : MonoBehaviour
         yield return new WaitForSeconds(1f);
         for (int i = 0; i < level; i++)
         {
-            if(colorList.Count < level)
+            if(colorList.Count < level) // Lits if shown colors
             {
-                myRandom = Random.Range(0, myButtons.Length);
-                colorList.Add(myRandom);
+                randomColor = Random.Range(0, colorButtons.Length); // Color is one of the available colors
+                colorList.Add(randomColor); 
             }
             
-            myButtons[colorList[i]].ClickedColor();
-            yield return new WaitForSeconds(showtime);  // Highlight Color
-            myButtons[colorList[i]].UnClickedColor();
-            yield return new WaitForSeconds(pausetime); // Normal Color
+            colorButtons[colorList[i]].ClickedColor();   // Change to highlight
+            yield return new WaitForSeconds(showtime);   // Highlight Color time
+            colorButtons[colorList[i]].UnClickedColor(); // Change back to normal
+            yield return new WaitForSeconds(pausetime);  // Normal Color
         }
         player = true;
     }
@@ -96,8 +98,6 @@ public class RobotLogic : MonoBehaviour
         gameOverText.text = "";
         scoreText.text = score.ToString();
         StartButton.interactable = false;
-
-
     }
 
     private void GameOver()
