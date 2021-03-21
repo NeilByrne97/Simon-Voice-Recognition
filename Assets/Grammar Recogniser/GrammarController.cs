@@ -19,8 +19,8 @@ public class GrammarController : MonoBehaviour
     private void Start()
     {
         gr = new GrammarRecognizer(Path.Combine(Application.streamingAssetsPath, 
-                                                "SimpleGrammar.xml"), 
-                                    ConfidenceLevel.Low);
+                                                "GameGrammar.xml"), 
+                                    ConfidenceLevel.High);
         Debug.Log("Grammar loaded!");
         gr.OnPhraseRecognized += GR_OnPhraseRecognized;
         gr.Start();
