@@ -23,10 +23,12 @@ public class RobotLogic : MonoBehaviour
     public Button StartButton;
     public Text gameOverText;
     public Text scoreText;
-    private int score;
+    public Text highScore;
+    public int score;
 
     void Start()
     {
+        highScore.text = PlayerPrefs.GetInt("High Score", 0).ToString();
         for (int i = 0; i < colorButtons.Length; i++)   // Difficulty TO BE DONE
         {
             colorButtons[i].onClick += ButtonClicked;    
@@ -38,14 +40,20 @@ public class RobotLogic : MonoBehaviour
     {
         if(player)
         {
-            if(_number == colorList[playerLevel])   // playerLevel is the position in the sequence
+            if(_number == colorList[playerLevel])   // playerLevel is the position in the sequence EXPLAIN BETTER
             {
                 playerLevel += 1;   // Next color in position set up for next button press
                 score += 1;         // Increment after every correct click
                 scoreText.text = score.ToString();  // Update string
             }
-            else
+            else // Wrong answer
             {
+                highScore.text = score.ToString();
+                if(score > PlayerPrefs.GetInt("Highscore", 0))
+                {
+                    PlayerPrefs.SetInt("Highscore", score);
+                    highScore.text = score.ToString();
+                }
                 GameOver();
             }
             if(playerLevel == level)

@@ -4,11 +4,25 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
-  /*  public void PlayGame ()
+   public bool gamePaused = false;
+    public GameObject pauseMenu;
+    public void PauseGame()   // To be called from Menu Resume button
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+ 1);
+        pauseMenu.SetActive(true);
+        gamePaused = true;
+        Time.timeScale = 0;
     }
-*/
+    public void UnpauseGame()   // To be called from Menu Resume button
+    {
+        pauseMenu.SetActive(false);
+        gamePaused = false;
+        Time.timeScale = 1;
+    }
+
+    public void GameMenu ()
+    {
+        SceneManager.LoadScene(0);
+    }
     public void EasyLevel ()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+ 1);
