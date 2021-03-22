@@ -13,7 +13,10 @@
       </item>     
       <item>
         <ruleref uri="#colorstate" />
-      </item>      
+      </item>
+      <item>
+        <ruleref uri="#pausestate" />
+      </item>        
     </one-of>
   </rule>
 
@@ -23,8 +26,6 @@
         <tag>out.action = "play";</tag>
         <one-of>
           <item> Play </item>
-          <item> Start </item>
-          <item> Begin </item>
           <item> Begin a new game </item>
           <item> New game </item>
           <item> I want to play </item>
@@ -149,7 +150,51 @@
     </one-of>
   </rule>
 
- 
+   <rule id="pausestate">
+    <one-of>
+      <item>
+        <tag>out.action = "pause";</tag>
+        <one-of>
+          <item> Pause </item>
+          <item> Stop </item>
+        </one-of>
+      </item>
+
+      <item>
+        <tag>out.action = "start";</tag>
+        <one-of>
+          <item> Start </item>
+          <item> Begin </item>
+        </one-of>
+      </item>
+
+      <item>
+        <tag>out.action = "resume";</tag>
+        <one-of>
+          <item> Resume </item>
+          <item> Continue </item>
+        </one-of>
+      </item>
+
+      <item>
+        <tag>out.action = "menu";</tag>
+        <one-of>
+          <item> Menu </item>
+          <item> Main Menu </item>
+        </one-of>
+      </item>
+
+      <item>
+        <tag>out.action = "quit";</tag>
+        <one-of>
+          <item> Quit </item>
+          <item> Exit </item>
+        </one-of>
+      </item>
+
+    </one-of>
+  </rule>
+
 
 </grammar>
 

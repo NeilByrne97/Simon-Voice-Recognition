@@ -26,7 +26,7 @@ public class RobotLogic : MonoBehaviour
     public Text highScore;
     public int score;
 
-    void Start()
+    public void Start()
     {
         highScore.text = PlayerPrefs.GetInt("High Score", 0).ToString();
         for (int i = 0; i < colorButtons.Length; i++) 

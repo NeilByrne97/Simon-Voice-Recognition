@@ -29,7 +29,7 @@ public class ClickButton : MonoBehaviour
         
     }
 
-    private void OnMouseDown()
+    protected void OnMouseDown()
     {
         if(myLogic.player)
         {
@@ -39,7 +39,7 @@ public class ClickButton : MonoBehaviour
         }
     }
 
-    private void OnMouseUp()
+    protected void OnMouseUp()
     {
         UnClickedColor();
         transform.position = new Vector3 (myTP.x, myTP.y, myTP.z);
