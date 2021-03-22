@@ -768,6 +768,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b33d0b25ee7ea444bda987a67c07bb2, type: 3}
+--- !u!1 &510450340 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 81933570960910336, guid: 9b33d0b25ee7ea444bda987a67c07bb2,
+    type: 3}
+  m_PrefabInstance: {fileID: 510450339}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -955,6 +961,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1114952385
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1114952386}
+  m_Layer: 0
+  m_Name: OverflowColors
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1114952386
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1114952385}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 115, y: 534.1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1469830384
 GameObject:
   m_ObjectHideFlags: 0
@@ -1077,6 +1113,69 @@ MonoBehaviour:
   scoreText: {fileID: 1907631261}
   highScore: {fileID: 128581137}
   score: 0
+--- !u!1 &1533153790
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1533153792}
+  - component: {fileID: 1533153791}
+  m_Layer: 0
+  m_Name: SpeechController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1533153791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1533153790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95de67d91e986b4469d3f24048076caa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Yellow: {fileID: 69180508}
+  Green: {fileID: 455258026}
+  Blue: {fileID: 266744654}
+  Red: {fileID: 78213818}
+  Orange: {fileID: 1114952385}
+  Purple: {fileID: 1114952385}
+  MatYellow: {fileID: 2100000, guid: d7630b25ea949f84abcaeb78ec3dfb4b, type: 2}
+  MatGreen: {fileID: 2100000, guid: f567a39dd56dc7e44bb7f242aefc845a, type: 2}
+  MatBlue: {fileID: 2100000, guid: ff674c06f0fe76d4db580d774435b585, type: 2}
+  MatRed: {fileID: 2100000, guid: dfc45df8608301e4fadbe9510cf028a8, type: 2}
+  MatOrange: {fileID: 2100000, guid: 38a0ad891ee7b4f42a42095eff56d8f0, type: 2}
+  MatPurple: {fileID: 2100000, guid: 96da31dafad400345bf3d3103edcf3fd, type: 2}
+  MatYellowLight: {fileID: 2100000, guid: f72ac3e57874b3742940439c40200aae, type: 2}
+  MatGreenLight: {fileID: 2100000, guid: 0cf9162411f0e2a43b733c123eea01d9, type: 2}
+  MatBlueLight: {fileID: 2100000, guid: 402a26af89bbffa4d9007d79cf830e7c, type: 2}
+  MatRedLight: {fileID: 2100000, guid: 838053cf00944a043a4139d32dcd1812, type: 2}
+  MatOrangeLight: {fileID: 2100000, guid: 40005ae377ab7c642b9fc8537ac27a7a, type: 2}
+  MatPurpleLight: {fileID: 2100000, guid: 4d9484d9c7ccee548a5cb196146df14b, type: 2}
+  robotLogic: {fileID: 1469830389}
+  PauseMenu: {fileID: 510450340}
+--- !u!4 &1533153792
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1533153790}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 115, y: 534.1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1907631261 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6062817108243264226, guid: 9b33d0b25ee7ea444bda987a67c07bb2,
