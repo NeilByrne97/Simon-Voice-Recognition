@@ -17,7 +17,7 @@
   <rule id="playstate">
     <one-of>
       <item>
-        <tag>out.action = "new";</tag>
+        <tag>out.action = "play";</tag>
         <one-of>
           <item> Play </item>
           <item> Start </item>
@@ -37,6 +37,14 @@
         </one-of>
       </item>
 
+      <item>
+        <tag>out.action = "back";</tag>
+        <one-of>
+          <item> Back </item>
+          <item> Return </item>
+          <item> Undo </item>
+        </one-of>
+      </item>
 
       <item>
         <tag>out.action = "quit";</tag>

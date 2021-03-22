@@ -76,6 +76,7 @@
      <Compile Include="Assets\Scripts\ClickButton.cs" />
      <Compile Include="Assets\Scripts\CreateCone.cs" />
      <Compile Include="Assets\Scripts\MainMenu.cs" />
+     <Compile Include="Assets\Scripts\MainMenuSpeechRecognition.cs" />
      <Compile Include="Assets\Scripts\PauseMenu.cs" />
      <Compile Include="Assets\Scripts\RobotLogic.cs" />
      <None Include="Assets\Imports\TextMesh Pro\Shaders\TMPro.cginc" />
