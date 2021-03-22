@@ -9,8 +9,11 @@
         <ruleref uri="#playstate" />
       </item>
       <item>
-        <ruleref uri="#movestate" />
-      </item>
+        <ruleref uri="#difficultystate" />
+      </item>     
+      <item>
+        <ruleref uri="#colorstate" />
+      </item>      
     </one-of>
   </rule>
 
@@ -58,58 +61,97 @@
           <item> I give up </item>
         </one-of>
       </item>
+    </one-of>
+  </rule>
 
+    <rule id="difficultystate">
+    <one-of>
       <item>
-        <tag>out.action = "quit";</tag>
+        <tag>out.action = "easy";</tag>
         <one-of>
-          <item> Quit </item>
-          <item> Finish </item>
-          <item> Bye </item>
-
-          <item> finish the game </item>
-          <item> exit game </item>
-          <item> I give up </item>
+          <item> Easy </item>
+          <item> One </item>
+          <item> First </item>
         </one-of>
       </item>
 
+      <item>
+        <tag>out.action = "medium";</tag>
+        <one-of>
+          <item> Medium </item>
+          <item> Two </item>
+          <item> Second </item>
+        </one-of>
+      </item>
+
+      <item>
+        <tag>out.action = "hard";</tag>
+        <one-of>
+          <item> Hard </item>
+          <item> Three </item>
+          <item> Third </item>
+        </one-of>
+      </item>
 
     </one-of>
   </rule>
 
-  <rule id="movestate">
-    <tag>out.action="position"; </tag>
+   <rule id="colorstate">
     <one-of>
-      <item> place </item>
-      <item> move </item>
+      <item>
+        <tag>out.action = "yellow";</tag>
+        <one-of>
+          <item> Yellow </item>
+          <item> Fix </item>
+        </one-of>
+      </item>
+
+      <item>
+        <tag>out.action = "green";</tag>
+        <one-of>
+          <item> Green </item>
+          <item> This </item>
+        </one-of>
+      </item>
+
+      <item>
+        <tag>out.action = "blue";</tag>
+        <one-of>
+          <item> Blue </item>
+          <item> Some </item>
+        </one-of>
+      </item>
+
+      <item>
+        <tag>out.action = "red";</tag>
+        <one-of>
+          <item> Red </item>
+          <item> Other </item>
+        </one-of>
+      </item>
+
+      <item>
+        <tag>out.action = "orange";</tag>
+        <one-of>
+          <item> Orange </item>
+          <item> Time </item>
+        </one-of>
+      </item>
+
+      <item>
+        <tag>out.action = "purple";</tag>
+        <one-of>
+          <item> Purple </item>
+          <item> Later </item>
+        </one-of>
+      </item>
+
     </one-of>
-    <ruleref uri="#moveplayer" />
-    <tag>out.Player = rules.latest();</tag>
-    <one-of>
-      <item> at </item>
-      <item> to </item>
-    </one-of>
-    <ruleref uri="#moveoptions" />
-    <tag>out.Row = rules.latest();</tag>
-    <ruleref uri="#moveoptions" />
-    <tag>out.Column = rules.latest();</tag>
   </rule>
 
-  <rule id="moveplayer">
-    <one-of>
-      <item> X <tag>out="X"</tag>
-    </item>
-      <item> O <tag>out="O"</tag> </item>
-    </one-of>
-  </rule>
-  
-  <rule id="moveoptions">
-    <one-of>
-      <item> Top </item>
-      <item> Middle </item>
-      <item> Bottom </item>
-      <item> Left </item>
-      <item> Center </item>
-      <item> Right </item>
-    </one-of>
-  </rule>
+ 
+
 </grammar>
+
+
+ 

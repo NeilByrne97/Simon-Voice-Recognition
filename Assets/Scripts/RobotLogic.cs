@@ -11,7 +11,7 @@ public class RobotLogic : MonoBehaviour
     public float pausetime = 0.5f;  // Normal Color
     
     // Game objects
-    public int level = 2;
+    public int level = 2;   // Two color sequence at start
     private int playerLevel = 0;
     private bool robot = false;
     public bool player = false;
@@ -29,18 +29,18 @@ public class RobotLogic : MonoBehaviour
     void Start()
     {
         highScore.text = PlayerPrefs.GetInt("High Score", 0).ToString();
-        for (int i = 0; i < colorButtons.Length; i++)   // Difficulty TO BE DONE
+        for (int i = 0; i < colorButtons.Length; i++) 
         {
             colorButtons[i].onClick += ButtonClicked;    
             colorButtons[i].myNumber = i;
         }    
     }
 
-    void ButtonClicked(int _number)
+    public void ButtonClicked(int _number)
     {
         if(player)
         {
-            if(_number == colorList[playerLevel])   // playerLevel is the position in the sequence EXPLAIN BETTER
+            if(_number == colorList[playerLevel])   // playerLevel is the position in the color sequence
             {
                 playerLevel += 1;   // Next color in position set up for next button press
                 score += 1;         // Increment after every correct click
@@ -65,8 +65,6 @@ public class RobotLogic : MonoBehaviour
             }
         }
     }
-
-
 
     void Update()
     {
@@ -102,7 +100,7 @@ public class RobotLogic : MonoBehaviour
         robot = true;
         score = 0;
         playerLevel = 0;
-        level = 2;
+        level = 2;  // Two color sequence at start
         gameOverText.text = "";
         scoreText.text = score.ToString();
         StartButton.interactable = false;

@@ -6,6 +6,8 @@ using System.IO;
 using System.Text;  // for stringbuilder
 using UnityEngine;
 using UnityEngine.Windows.Speech;   // grammar recogniser
+using UnityEngine.SceneManagement;
+
 
 /*
  *  Uses English US in the settings - Keyboard (on the taskbar), Region, Preferred Language and Speech in Settings
@@ -19,6 +21,7 @@ public class MainMenuSpeechRecognition : MonoBehaviour
     public GameObject DifficultyMenu;
     public GameObject MainMenu;
     public GameObject LeaderboardMenu;
+
     private void Start()
     {
         actions.Add("play", Play);
@@ -26,6 +29,9 @@ public class MainMenuSpeechRecognition : MonoBehaviour
         actions.Add("quit", Quit);
         actions.Add("back", Back);
 
+        actions.Add("easy", Easy);
+        actions.Add("medium", Medium);
+        actions.Add("hard", Hard);
 
         gr = new GrammarRecognizer(Path.Combine(Application.streamingAssetsPath, 
                                                 "GameGrammar.xml"), 
@@ -76,6 +82,22 @@ public class MainMenuSpeechRecognition : MonoBehaviour
         Debug.Log("Quiting...");
         Application.Quit();  
     }
+
+    private void Easy()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+ 1);
+    }
+  
+    private void Medium()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+ 2);
+    }
+
+    private void Hard()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+ 3);
+    }
+
 
     private void OnApplicationQuit()
     {
