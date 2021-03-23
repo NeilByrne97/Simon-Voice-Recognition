@@ -34,6 +34,7 @@ public class ClickButton : MonoBehaviour
         if(myLogic.player)
         {
             ClickedColor();
+            GetComponent<AudioSource>().Play();
             transform.position = new Vector3 (myTP.x, -0.2f, myTP.z);
             onClick.Invoke(myNumber);
         }

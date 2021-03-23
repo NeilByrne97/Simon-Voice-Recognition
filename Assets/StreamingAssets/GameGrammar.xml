@@ -17,9 +17,10 @@
       <item>
         <ruleref uri="#pausestate" />
       </item>
-        <item>
-        <ruleref uri="#rotatestate" />
-      </item>         
+      <item>
+        <ruleref uri="#volumestate" />
+      </item>
+        
     </one-of>
   </rule>
 
@@ -36,11 +37,10 @@
       </item>
 
       <item>
-        <tag>out.action = "leaderboard";</tag>
+        <tag>out.action = "volume";</tag>
         <one-of>
-          <item> Leaderboard </item>
-          <item> Highscore </item>
-          <item> Who is the best </item>
+          <item> Volume </item>
+          <item> Audio </item>
         </one-of>
       </item>
 
@@ -106,7 +106,6 @@
         <tag>out.action = "yellow";</tag>
         <one-of>
           <item> Yellow </item>
-          <item> Fix </item>
         </one-of>
       </item>
 
@@ -214,6 +213,30 @@
       <item> Right <tag>out="right"</tag> </item>
     </one-of>
   </rule>
+
+  <rule id="volumestate">
+    <one-of>
+      <item> Change  </item>
+      <item> Adjust  </item>
+    </one-of>
+    <one-of>
+      <item> the volume </item>
+      <item> the sound </item>
+      <item> the audio </item>
+    </one-of>
+    <ruleref uri="#percentoptions" />
+  </rule>
+
+  <rule id="percentoptions">
+    <one-of>
+      <item> Off <tag>out="off"</tag>
+    </item>
+      <item> Twenty five <tag>out="twentyfive"</tag> </item>
+    </one-of>
+  </rule>
+
+ 
+
   
 
 </grammar>

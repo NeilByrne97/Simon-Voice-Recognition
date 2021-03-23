@@ -9,10 +9,6 @@ using UnityEngine.Windows.Speech;   // grammar recogniser
 using UnityEngine.SceneManagement;
 
 
-/*
- *  Uses English US in the settings - Keyboard (on the taskbar), Region, Preferred Language and Speech in Settings
- */
-
 public class MainMenuSpeechRecognition : MonoBehaviour
 {
     private Dictionary<string, Action> actions = new Dictionary<string, Action>();
@@ -23,7 +19,7 @@ public class MainMenuSpeechRecognition : MonoBehaviour
     public GameObject LeaderboardMenu;
 
     private void Start()
-    {
+    {   // Main menu buttons
         actions.Add("play", Play);
         actions.Add("leaderboard", Leaderboard);
         actions.Add("quit", Quit);
@@ -32,6 +28,9 @@ public class MainMenuSpeechRecognition : MonoBehaviour
         actions.Add("easy", Easy);
         actions.Add("medium", Medium);
         actions.Add("hard", Hard);
+
+        actions.Add("off", Off);
+        actions.Add("twentyfive", TwentyFive);
 
         gr = new GrammarRecognizer(Path.Combine(Application.streamingAssetsPath, 
                                                 "GameGrammar.xml"), 
@@ -54,7 +53,8 @@ public class MainMenuSpeechRecognition : MonoBehaviour
         {
             string keyString = meaning.key.Trim();
             string valueString = meaning.values[0].Trim();
-            message.Append("Key: " + keyString + ", Value: " + valueString + " ");
+           // message.Append("Key: " + keyString + ", Value: " + valueString + " ");
+            message.Append("You said" + valueString);
             actions[valueString].Invoke();
         }
         // use a string builder to create the string and out put to the user
@@ -96,6 +96,18 @@ public class MainMenuSpeechRecognition : MonoBehaviour
     private void Hard()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+ 3);
+    }
+
+    private void Off()
+    {
+        VolumeSlider volumeSlider = new VolumeSlider();
+        volumeSlider.SetVolume(0);
+    }
+
+    private void TwentyFive()
+    {
+        VolumeSlider volumeSlider = new VolumeSlider();
+        volumeSlider.SetVolume(25);
     }
 
 

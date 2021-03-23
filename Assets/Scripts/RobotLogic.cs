@@ -13,7 +13,8 @@ public class RobotLogic : MonoBehaviour
     // Game objects
     public int level = 2;   // Two color sequence at start
     private int playerLevel = 0;
-    private bool robot = false;
+    // Who's turn is it
+    private bool robot = false; 
     public bool player = false;
 
     // Color changes each turn
@@ -28,7 +29,6 @@ public class RobotLogic : MonoBehaviour
 
     public void Start()
     {
-        highScore.text = PlayerPrefs.GetInt("High Score", 0).ToString();
         for (int i = 0; i < colorButtons.Length; i++) 
         {
             colorButtons[i].onClick += ButtonClicked;    
@@ -47,11 +47,10 @@ public class RobotLogic : MonoBehaviour
                 scoreText.text = score.ToString();  // Update string
             }
             else // Wrong answer
-            {
+            {   // Set the highscore
                 highScore.text = score.ToString();
                 if(score > PlayerPrefs.GetInt("Highscore", 0))
                 {
-                    PlayerPrefs.SetInt("Highscore", score);
                     highScore.text = score.ToString();
                 }
                 GameOver();
@@ -69,7 +68,7 @@ public class RobotLogic : MonoBehaviour
     void Update()
     {
         if(robot)
-        {
+        {   
             robot = false;
             StartCoroutine(Robot());
         }
@@ -86,9 +85,9 @@ public class RobotLogic : MonoBehaviour
                 randomColor = Random.Range(0, colorButtons.Length); // Color is one of the available colors
                 colorList.Add(randomColor); 
             }
-            
             colorButtons[colorList[i]].ClickedColor();   // Change to highlight
             yield return new WaitForSeconds(showtime);   // Highlight Color time
+            colorButtons[colorList[i]].GetComponent<AudioSource>().Play();
             colorButtons[colorList[i]].UnClickedColor(); // Change back to normal
             yield return new WaitForSeconds(pausetime);  // Normal Color
         }

@@ -8,7 +8,10 @@ public class SoundManager : MonoBehaviour
     public AudioClip hoverFx;
     public AudioClip clickFx;
     public AudioClip backFx;
+    public AudioClip rotateFx;
+
     public AudioClip difficultySelectFx;
+
     public AudioSource audioSrc;
 
 
@@ -34,5 +37,14 @@ public class SoundManager : MonoBehaviour
  
     }
 
+    public void RotationSound()
+    {
+        audioSrc.PlayOneShot(difficultySelectFx);
+ 
+    }
+
+
 
 }
+
+
