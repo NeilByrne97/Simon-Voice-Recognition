@@ -1566,6 +1566,7 @@ MonoBehaviour:
   MatPurpleLight: {fileID: 2100000, guid: 4d9484d9c7ccee548a5cb196146df14b, type: 2}
   robotLogic: {fileID: 1469830389}
   PauseMenu: {fileID: 6125003449878776927}
+  GamePanel: {fileID: 1469830384}
   savedPosition: {x: 0, y: 0, z: 0}
 --- !u!4 &1230857105
 Transform:

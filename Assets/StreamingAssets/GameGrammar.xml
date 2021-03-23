@@ -18,6 +18,9 @@
         <ruleref uri="#pausestate" />
       </item>
       <item>
+        <ruleref uri="#rotatestate" />
+      </item>
+      <item>
         <ruleref uri="#volumestate" />
       </item>
         

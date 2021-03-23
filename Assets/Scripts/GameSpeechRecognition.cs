@@ -44,6 +44,7 @@ public class GameSpeechRecognition : MonoBehaviour
 
     public RobotLogic robotLogic = new RobotLogic();
     [SerializeField] GameObject PauseMenu;
+    [SerializeField] GameObject GamePanel;
 
     public Vector3 savedPosition; // Position of first color to change with rotation for the last object
 
@@ -88,7 +89,7 @@ public class GameSpeechRecognition : MonoBehaviour
             string keyString = meaning.key.Trim();
             string valueString = meaning.values[0].Trim();
             //message.Append("Key: " + keyString + ", Value: " + valueString + " ");
-            message.Append("You said" + valueString);
+            message.Append("You said " + valueString);
             actions[valueString].Invoke();
         }
         // use a string builder to create the string and out put to the user
@@ -192,8 +193,8 @@ public class GameSpeechRecognition : MonoBehaviour
 
     public void RotateRight()
     {
-        print("Tag is " + this.tag);
-        if(gameObject.tag == "EasyLevel")
+        print("Tag is " + GamePanel.tag);
+        if(GamePanel.tag == "EasyLevel")
         {
             savedPosition = Red.transform.position;  // Save before you change
 
@@ -204,8 +205,9 @@ public class GameSpeechRecognition : MonoBehaviour
         
         }
 
-        else if(gameObject.tag == "MediumLevel")
+        else if(GamePanel.tag == "MediumLevel")
         {
+            print("BOOOM " );
             savedPosition = Red.transform.position;  // Save before you change
 
             Red.transform.position = Green.transform.position;  
@@ -232,16 +234,44 @@ public class GameSpeechRecognition : MonoBehaviour
 
     public void RotateLeft()
     {
-        savedPosition = Orange.transform.position;
+        print("Tag is " + GamePanel.tag);
+        if(GamePanel.tag == "EasyLevel")
+        {
+            savedPosition = Red.transform.position;  // Save before you change
 
-        Orange.transform.position = Blue.transform.position;
-        Blue.transform.position = Red.transform.position;
-        Red.transform.position = Yellow.transform.position;
-        Yellow.transform.position = Green.transform.position;
-        Green.transform.position = Purple.transform.position;
-        Purple.transform.position = savedPosition;
+            Red.transform.position = Blue.transform.position;  
+            Blue.transform.position = Yellow.transform.position;  
+            Yellow.transform.position = Green.transform.position;  
+            Green.transform.position = savedPosition;  
+        
+        }
 
+        else if(GamePanel.tag == "MediumLevel")
+        {
+            print("BOOOM " );
+            savedPosition = Red.transform.position;  // Save before you change
+
+            Red.transform.position = Orange.transform.position;  
+            Orange.transform.position = Yellow.transform.position;  
+            Yellow.transform.position = Blue.transform.position;  
+            Blue.transform.position = Green.transform.position;  
+            Red.transform.position = savedPosition;  
+
+
+
+        }
+        else    // HardLevel
+        {
+            savedPosition = Orange.transform.position;
+
+            Orange.transform.position = Blue.transform.position;
+            Blue.transform.position = Red.transform.position;
+            Red.transform.position = Yellow.transform.position;
+            Yellow.transform.position = Green.transform.position;
+            Green.transform.position = Purple.transform.position;
+            Purple.transform.position = savedPosition;
+
+        }
     }
-
 
 }
