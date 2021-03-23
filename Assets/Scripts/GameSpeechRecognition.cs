@@ -45,6 +45,8 @@ public class GameSpeechRecognition : MonoBehaviour
     public RobotLogic robotLogic = new RobotLogic();
     [SerializeField] GameObject PauseMenu;
 
+     public Vector3 savedPosition;
+
     private void Start()
     {    
         actions.Add("yellow", YellowColor);
@@ -178,4 +180,20 @@ public class GameSpeechRecognition : MonoBehaviour
             gr.Stop();
         }
     }
+
+
+    public void ChangePositions()
+    {
+        savedPosition = Orange.transform.position;
+
+        Orange.transform.position = Purple.transform.position;  
+        Purple.transform.position = Green.transform.position;  
+        Green.transform.position = Yellow.transform.position;  
+        Yellow.transform.position = Red.transform.position;  
+        Red.transform.position = Blue.transform.position;  
+        Blue.transform.position = savedPosition;  
+
+
+    }
+
 }

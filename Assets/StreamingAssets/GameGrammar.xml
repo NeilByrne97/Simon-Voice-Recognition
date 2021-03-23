@@ -111,7 +111,6 @@
         <tag>out.action = "green";</tag>
         <one-of>
           <item> Green </item>
-          <item> This </item>
         </one-of>
       </item>
 
@@ -119,7 +118,6 @@
         <tag>out.action = "blue";</tag>
         <one-of>
           <item> Blue </item>
-          <item> Some </item>
         </one-of>
       </item>
 
@@ -127,7 +125,6 @@
         <tag>out.action = "red";</tag>
         <one-of>
           <item> Red </item>
-          <item> Other </item>
         </one-of>
       </item>
 
@@ -135,7 +132,6 @@
         <tag>out.action = "orange";</tag>
         <one-of>
           <item> Orange </item>
-          <item> Time </item>
         </one-of>
       </item>
 
@@ -143,7 +139,6 @@
         <tag>out.action = "purple";</tag>
         <one-of>
           <item> Purple </item>
-          <item> Later </item>
         </one-of>
       </item>
 
