@@ -16,7 +16,10 @@
       </item>
       <item>
         <ruleref uri="#pausestate" />
-      </item>        
+      </item>
+        <item>
+        <ruleref uri="#rotatestate" />
+      </item>         
     </one-of>
   </rule>
 
@@ -190,6 +193,28 @@
     </one-of>
   </rule>
 
+  <rule id="rotatestate">
+    <one-of>
+      <item> Rotate the colors </item>
+      <item> Move the colors </item>
+      <item> Change the colors </item>
+    </one-of>
+    <one-of>
+      <item> to </item>
+      <item> the </item>
+      <item> to the </item>
+    </one-of>
+    <ruleref uri="#rotateoptions" />
+  </rule>
+
+  <rule id="rotateoptions">
+    <one-of>
+      <item> Left <tag>out="left"</tag>
+    </item>
+      <item> Right <tag>out="right"</tag> </item>
+    </one-of>
+  </rule>
+  
 
 </grammar>
 

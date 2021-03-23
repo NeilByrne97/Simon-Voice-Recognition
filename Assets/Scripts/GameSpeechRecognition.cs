@@ -47,6 +47,7 @@ public class GameSpeechRecognition : MonoBehaviour
 
      public Vector3 savedPosition;
 
+
     private void Start()
     {    
         actions.Add("yellow", YellowColor);
@@ -63,6 +64,8 @@ public class GameSpeechRecognition : MonoBehaviour
         actions.Add("menu", Menu);
         actions.Add("quit", Quit);
 
+        actions.Add("left", RotateLeft);
+        actions.Add("right", RotateRight);
 
         gr = new GrammarRecognizer(Path.Combine(Application.streamingAssetsPath, 
                                                 "GameGrammar.xml"), 
@@ -181,8 +184,7 @@ public class GameSpeechRecognition : MonoBehaviour
         }
     }
 
-
-    public void ChangePositions()
+    public void RotateRight()
     {
         savedPosition = Orange.transform.position;
 
@@ -192,8 +194,20 @@ public class GameSpeechRecognition : MonoBehaviour
         Yellow.transform.position = Red.transform.position;  
         Red.transform.position = Blue.transform.position;  
         Blue.transform.position = savedPosition;  
+    }
 
+    public void RotateLeft()
+    {
+        savedPosition = Orange.transform.position;
+
+        Orange.transform.position = Blue.transform.position;
+        Blue.transform.position = Red.transform.position;
+        Red.transform.position = Yellow.transform.position;
+        Yellow.transform.position = Green.transform.position;
+        Green.transform.position = Purple.transform.position;
+        Purple.transform.position = savedPosition;
 
     }
+
 
 }
