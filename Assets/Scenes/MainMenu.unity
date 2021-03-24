@@ -1509,7 +1509,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1083040817
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1759,6 +1759,7 @@ MonoBehaviour:
   DifficultyMenu: {fileID: 1083040816}
   MainMenu: {fileID: 1961293110}
   LeaderboardMenu: {fileID: 1789987947}
+  volumeSlider: {fileID: 1988774528}
 --- !u!4 &1178145126
 Transform:
   m_ObjectHideFlags: 0
@@ -3024,7 +3025,7 @@ PrefabInstance:
     - target: {fileID: 1770537365456652016, guid: 579c42afd14f02640b19294e8638221c,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1770537365456652017, guid: 579c42afd14f02640b19294e8638221c,
         type: 3}

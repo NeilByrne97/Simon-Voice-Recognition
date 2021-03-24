@@ -69,7 +69,7 @@ public class GameSpeechRecognition : MonoBehaviour
         
         gr = new GrammarRecognizer(Path.Combine(Application.streamingAssetsPath, 
                                                 "GameGrammar.xml"), 
-                                    ConfidenceLevel.High);
+                                    ConfidenceLevel.Low);
         Debug.Log("Grammar loaded!");
         gr.OnPhraseRecognized += GR_OnPhraseRecognized;
         gr.Start();
@@ -128,7 +128,6 @@ public class GameSpeechRecognition : MonoBehaviour
         StartCoroutine(Click());
         //Yellow.GetComponent<MeshRenderer> ().material = MatYellowLight;
         robotLogic.ButtonClicked(0);
-        Debug.Log("Yellow");    
     }
     private void GreenColor()
     {
@@ -145,7 +144,6 @@ public class GameSpeechRecognition : MonoBehaviour
         StartCoroutine(Click());
         //Blue.GetComponent<MeshRenderer> ().material = MatBlueLight;                
         robotLogic.ButtonClicked(2);
-        Debug.Log("Blue");  
     }
 
     private void RedColor()
@@ -155,7 +153,7 @@ public class GameSpeechRecognition : MonoBehaviour
         StartCoroutine(Click());
         // Red.GetComponent<MeshRenderer> ().material = MatRedLight;                
         robotLogic.ButtonClicked(3);
-        Debug.Log("Red");    }
+    }
     private void OrangeColor()
     {
         Orange.GetComponent<MeshRenderer> ().material = MatOrange;
@@ -163,7 +161,6 @@ public class GameSpeechRecognition : MonoBehaviour
         StartCoroutine(Click());
         // Orange.GetComponent<MeshRenderer> ().material = MatOrangeLight;                
         robotLogic.ButtonClicked(4);
-        Debug.Log("Orange");
     }
 
     private void PurpleColor()
@@ -173,7 +170,6 @@ public class GameSpeechRecognition : MonoBehaviour
         StartCoroutine(Click());
         // Purple.GetComponent<MeshRenderer> ().material = MatPurpleLight;                
         robotLogic.ButtonClicked(5);
-        Debug.Log("Purple");
     }
 
 
@@ -262,7 +258,7 @@ public class GameSpeechRecognition : MonoBehaviour
         }
         else    // HardLevel
         {
-            savedPosition = Orange.transform.position;
+            savedPosition = Orange.transform.position; // Save before you change
 
             Orange.transform.position = Blue.transform.position;
             Blue.transform.position = Red.transform.position;

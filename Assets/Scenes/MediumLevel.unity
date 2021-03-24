@@ -1641,6 +1641,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &754222248 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7612365875139243679, guid: 0c80c665a7484dd47afdcffcbbfe07cf,
+    type: 3}
+  m_PrefabInstance: {fileID: 754222243}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1757,7 +1763,7 @@ MonoBehaviour:
   Green: {fileID: 455258026}
   Blue: {fileID: 266744654}
   Red: {fileID: 78213818}
-  Orange: {fileID: 38127531}
+  Orange: {fileID: 286939564}
   Purple: {fileID: 38127531}
   MatYellow: {fileID: 2100000, guid: d7630b25ea949f84abcaeb78ec3dfb4b, type: 2}
   MatGreen: {fileID: 2100000, guid: f567a39dd56dc7e44bb7f242aefc845a, type: 2}
@@ -1772,7 +1778,7 @@ MonoBehaviour:
   MatOrangeLight: {fileID: 2100000, guid: 40005ae377ab7c642b9fc8537ac27a7a, type: 2}
   MatPurpleLight: {fileID: 2100000, guid: 4d9484d9c7ccee548a5cb196146df14b, type: 2}
   robotLogic: {fileID: 1469830389}
-  PauseMenu: {fileID: 0}
+  PauseMenu: {fileID: 754222248}
   GamePanel: {fileID: 1469830384}
   savedPosition: {x: 0, y: 0, z: 0}
 --- !u!4 &1083600531

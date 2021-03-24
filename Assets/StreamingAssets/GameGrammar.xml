@@ -234,7 +234,14 @@
     <one-of>
       <item> Off <tag>out="off"</tag>
     </item>
-      <item> Twenty five <tag>out="twentyfive"</tag> </item>
+      <item> Twenty five <tag>out="twentyFive"</tag> 
+    </item>
+      <item> Fifty <tag>out="fifty"</tag> 
+    </item>
+      <item> Seventy Five <tag>out="seventyFive"</tag> 
+    </item>
+      <item> One Hundred  <tag>out="oneHundred"</tag> 
+    </item>
     </one-of>
   </rule>
 

@@ -7,6 +7,7 @@ using System.Text;  // for stringbuilder
 using UnityEngine;
 using UnityEngine.Windows.Speech;   // grammar recogniser
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 
 public class MainMenuSpeechRecognition : MonoBehaviour
@@ -17,11 +18,13 @@ public class MainMenuSpeechRecognition : MonoBehaviour
     public GameObject DifficultyMenu;
     public GameObject MainMenu;
     public GameObject LeaderboardMenu;
+    [SerializeField] VolumeSlider volumeSlider = new VolumeSlider();
+    SoundManager soundManager = new SoundManager();
 
     private void Start()
     {   // Main menu buttons
         actions.Add("play", Play);
-        actions.Add("leaderboard", Leaderboard);
+        actions.Add("volume", Leaderboard);
         actions.Add("quit", Quit);
         actions.Add("back", Back);
 
@@ -30,11 +33,15 @@ public class MainMenuSpeechRecognition : MonoBehaviour
         actions.Add("hard", Hard);
 
         actions.Add("off", Off);
-        actions.Add("twentyfive", TwentyFive);
+        actions.Add("twentyFive", TwentyFive);
+        actions.Add("fifty", Fifty);
+        actions.Add("seventyFive", SeventyFive);
+        actions.Add("oneHundred", OneHundred);
+
 
         gr = new GrammarRecognizer(Path.Combine(Application.streamingAssetsPath, 
                                                 "GameGrammar.xml"), 
-                                    ConfidenceLevel.High);
+                                    ConfidenceLevel.Low);
         Debug.Log("Grammar loaded!");
         gr.OnPhraseRecognized += GR_OnPhraseRecognized;
         gr.Start();
@@ -54,7 +61,7 @@ public class MainMenuSpeechRecognition : MonoBehaviour
             string keyString = meaning.key.Trim();
             string valueString = meaning.values[0].Trim();
            // message.Append("Key: " + keyString + ", Value: " + valueString + " ");
-            message.Append("You said" + valueString);
+            message.Append("You said " + valueString);
             actions[valueString].Invoke();
         }
         // use a string builder to create the string and out put to the user
@@ -100,16 +107,25 @@ public class MainMenuSpeechRecognition : MonoBehaviour
 
     private void Off()
     {
-        VolumeSlider volumeSlider = new VolumeSlider();
-        volumeSlider.SetVolume(0);
+        volumeSlider.SetVolume(0f);
     }
 
     private void TwentyFive()
     {
-        VolumeSlider volumeSlider = new VolumeSlider();
-        volumeSlider.SetVolume(25);
+        volumeSlider.SetVolume(25f);
     }
-
+    private void Fifty()
+    {
+        volumeSlider.SetVolume(50f);
+    }
+    private void SeventyFive()
+    {
+        volumeSlider.SetVolume(75f);
+    }
+    private void OneHundred()
+    {
+        volumeSlider.SetVolume(100f);
+    }
 
     private void OnApplicationQuit()
     {

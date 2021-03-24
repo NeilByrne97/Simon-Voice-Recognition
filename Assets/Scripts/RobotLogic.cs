@@ -19,7 +19,6 @@ public class RobotLogic : MonoBehaviour
 
     // Color changes each turn
     private int randomColor;
-
     // Menu
     public Button StartButton;
     public Text gameOverText;
